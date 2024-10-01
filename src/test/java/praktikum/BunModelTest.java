@@ -12,6 +12,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class BunModelTest {
     private static final Random RANDOM = new Random();
+    private static final float DELTA = 0.001F; // Дельта для сравнения с плавающей точкой
     private final String name;
     private final float price;
 
@@ -43,6 +44,6 @@ public class BunModelTest {
     @Test
     public void getPriceTest() {
         Bun bun = new Bun(name, price);
-        assertEquals("Цена булки не совпадает", price, bun.getPrice(), 0);
+        assertEquals("Цена булки не совпадает", price, bun.getPrice(), DELTA);
     }
 }
